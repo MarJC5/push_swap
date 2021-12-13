@@ -9,3 +9,8 @@
 ## Goals
 
 This project involves sorting data on a stack, with a limited set of instructions, and the smallest number of moves. To make this happen, we have to manipulate various sorting algorithms and choose the most appropriate solution(s) for optimized data sorting.
+
+## [push_swap_visualizer](https://github.com/o-reo/push_swap_visualizer)
+Launch the script with :
+
+python3 visualizer.py `ruby -e "puts (-200..200).to_a.shuffle.join(' ')"` or any other list of numbers.
