@@ -1,22 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/13 16:18:21 by jmartin           #+#    #+#             */
-/*   Updated: 2021/12/13 16:29:12 by jmartin          ###   ########.fr       */
+/*   Created: 2021/10/19 22:55:45 by jmartin           #+#    #+#             */
+/*   Updated: 2021/10/22 09:50:19 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-# include "./libft/libft.h"
+char	*ft_strmapi(char const *str, char (*f)(unsigned int, char))
+{
+	size_t	i;
+	char	*s;
 
-void push_swap(void);
-
-#endif
+	i = -1;
+	if (!str)
+		return (NULL);
+	s = malloc((ft_strlen(str) + 1) * sizeof(char));
+	if (!s)
+		return (NULL);
+	while (++i < ft_strlen(str))
+		s[i] = f(i, str[i]);
+	s[i] = '\0';
+	return (s);
+}

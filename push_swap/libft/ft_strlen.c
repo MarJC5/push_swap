@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/13 16:18:21 by jmartin           #+#    #+#             */
-/*   Updated: 2021/12/13 16:29:12 by jmartin          ###   ########.fr       */
+/*   Created: 2021/10/11 16:49:01 by jmartin           #+#    #+#             */
+/*   Updated: 2021/10/22 14:53:20 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-# include "./libft/libft.h"
+size_t	ft_strlen(const char *str)
+{
+	size_t	i;
 
-void push_swap(void);
-
-#endif
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
+}

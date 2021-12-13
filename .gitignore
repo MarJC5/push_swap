@@ -4,6 +4,11 @@
 # Object files
 *.o
 *.ko
+
+# Others
+.DS_Store
+.vscode
+
 *.obj
 *.elf
 

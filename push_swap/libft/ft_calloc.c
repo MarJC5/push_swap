@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/13 16:18:21 by jmartin           #+#    #+#             */
-/*   Updated: 2021/12/13 16:29:12 by jmartin          ###   ########.fr       */
+/*   Created: 2021/10/15 07:13:15 by jmartin           #+#    #+#             */
+/*   Updated: 2021/10/18 09:31:43 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-# include "./libft/libft.h"
+void	*ft_calloc(size_t ecount, size_t esize)
+{
+	void	*ptr;
 
-void push_swap(void);
-
-#endif
+	ptr = malloc(ecount * esize);
+	if (!ptr)
+		return (NULL);
+	ft_bzero(ptr, ecount * esize);
+	return (ptr);
+}

@@ -1,22 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/13 16:18:21 by jmartin           #+#    #+#             */
-/*   Updated: 2021/12/13 16:29:12 by jmartin          ###   ########.fr       */
+/*   Created: 2021/10/14 14:26:34 by jmartin           #+#    #+#             */
+/*   Updated: 2021/10/22 14:54:08 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-# include "./libft/libft.h"
+size_t	ft_strlcpy(char *dst, const char *src, size_t n)
+{
+	size_t	i;
+	size_t	src_len;
 
-void push_swap(void);
-
-#endif
+	i = 0;
+	src_len = ft_strlen(src);
+	if (n > 0)
+	{
+		while (src[i] && i < (n - 1))
+		{
+			dst[i] = src[i];
+			i++;
+		}
+		dst[i] = '\0';
+	}
+	return (src_len);
+}
