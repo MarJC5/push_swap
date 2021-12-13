@@ -6,7 +6,7 @@
 #    By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/12 18:11:28 by jmartin           #+#    #+#              #
-#    Updated: 2021/12/13 10:28:29 by jmartin          ###   ########.fr        #
+#    Updated: 2021/12/13 16:35:08 by jmartin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ NAME 		= 	libft.a
 CFLAGS		= 	-Wall -Werror -Wextra -I. -c
 CC			= 	gcc
 RM			=	rm -f
-AR			=	ar -rcs # Create an archive from files
+AR			=	ar -rcs
 FILES		= 	ft_atoi.c \
 				ft_bzero.c \
 				ft_isalnum.c \
@@ -64,7 +64,6 @@ $(NAME):
 
 clean:
 	@$(RM) $(OBJ)
-	@$(RM) $(BONUSOBJ)
 
 fclean: clean
 	@$(RM) $(NAME)
