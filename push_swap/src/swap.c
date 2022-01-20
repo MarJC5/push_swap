@@ -6,7 +6,7 @@
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 07:12:07 by jmartin           #+#    #+#             */
-/*   Updated: 2022/01/20 07:24:37 by jmartin          ###   ########.fr       */
+/*   Updated: 2022/01/20 09:06:20 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ void	swap_a(void)
 void	swap_b(void)
 {
 	ft_putstr_fd("sb", 1);
-
 }
 
 void	swap_ab(void)

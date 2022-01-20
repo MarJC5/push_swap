@@ -6,7 +6,7 @@
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 07:11:58 by jmartin           #+#    #+#             */
-/*   Updated: 2022/01/20 07:23:12 by jmartin          ###   ########.fr       */
+/*   Updated: 2022/01/20 09:06:24 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,5 @@ void	rotate_b(void)
 
 void	rotate_ab(void)
 {
-		ft_putstr_fd("rr", 1);
+	ft_putstr_fd("rr", 1);
 }

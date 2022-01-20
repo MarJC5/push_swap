@@ -13,7 +13,8 @@ RM		=	rm -rf
 
 FOLDER	=	src/
 
-FILES	=	push_swap.c \
+FILES	=	args_utils.c \
+			push_swap.c \
 			push.c \
 			reverse_rotate.c \
 			rotate.c \
