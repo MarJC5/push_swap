@@ -6,7 +6,7 @@
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 16:18:21 by jmartin           #+#    #+#             */
-/*   Updated: 2022/01/20 13:19:17 by jmartin          ###   ########.fr       */
+/*   Updated: 2022/01/20 13:32:42 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define PUSH_SWAP_H
 
 # define WRONG_ARGS_ERROR	"Wrong number of arguments, please enter a string of numbers or\
-	numbers spearated by space."
+	numbers sparated by space."
 
 # include <unistd.h>
 # include <stdlib.h>
@@ -45,8 +45,8 @@ void	reverse_rotate_a(t_bucket *bucket);
 void	reverse_rotate_b(t_bucket *bucket);
 void	reverse_rotate_ab(t_bucket *bucket);
 
-void	push_a(void);
-void	push_b(void);
+void	push_a(t_bucket *bucket);
+void	push_b(t_bucket *bucket);
 
 void	display_stack(int *stack);
 void	single_arg_to_int(t_bucket *bucket, char *items);
