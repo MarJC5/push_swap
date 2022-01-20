@@ -18,7 +18,8 @@ FILES	=	args_utils.c \
 			push.c \
 			reverse_rotate.c \
 			rotate.c \
-			swap.c
+			swap.c \
+			utils.c
 
 LIBFT	= ./libft/libft.a
 
