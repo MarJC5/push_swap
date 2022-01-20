@@ -6,7 +6,7 @@
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 16:18:26 by jmartin           #+#    #+#             */
-/*   Updated: 2022/01/20 18:34:02 by jmartin          ###   ########.fr       */
+/*   Updated: 2022/01/20 18:37:54 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,6 @@ static void	show_staks(t_bucket *bucket)
 
 void	push_swap(t_bucket *bucket)
 {
-	push_b(bucket);
-	rotate_a(bucket);
-	reverse_rotate_a(bucket);
 	show_staks(bucket);
 }
 
