@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/13 16:18:21 by jmartin           #+#    #+#             */
-/*   Updated: 2021/12/13 16:29:12 by jmartin          ###   ########.fr       */
+/*   Created: 2022/01/20 07:11:58 by jmartin           #+#    #+#             */
+/*   Updated: 2022/01/20 07:23:12 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "../inc/push_swap.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-# include "./libft/libft.h"
+void	rotate_a(void)
+{
+	ft_putstr_fd("ra", 1);
+}
 
-void push_swap(void);
+void	rotate_b(void)
+{
+	ft_putstr_fd("rb", 1);
+}
 
-#endif
+void	rotate_ab(void)
+{
+		ft_putstr_fd("rr", 1);
+}

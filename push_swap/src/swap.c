@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/13 16:18:26 by jmartin           #+#    #+#             */
-/*   Updated: 2021/12/13 16:30:43 by jmartin          ###   ########.fr       */
+/*   Created: 2022/01/20 07:12:07 by jmartin           #+#    #+#             */
+/*   Updated: 2022/01/20 07:24:37 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../inc/push_swap.h"
 
-void push_swap(void)
+void	swap_a(void)
 {
-	ft_putstr_fd("Hello world!", 1);
+	ft_putstr_fd("sa", 1);
 }
 
-int	main(void)
+void	swap_b(void)
 {
-	push_swap();
-	return (0);
+	ft_putstr_fd("sb", 1);
+
+}
+
+void	swap_ab(void)
+{
+	ft_putstr_fd("ss", 1);
 }

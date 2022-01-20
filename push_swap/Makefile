@@ -13,16 +13,20 @@ RM		=	rm -rf
 
 FOLDER	=	src/
 
-FILES	=	push_swap.c
+FILES	=	push_swap.c \
+			push.c \
+			reverse_rotate.c \
+			rotate.c \
+			swap.c
 
 LIBFT	= ./libft/libft.a
 
 SRC 	=	$(addprefix $(FOLDER), $(FILES))
 OBJ 	=	$(SRC:.c=.o)
 
-all: $(SERVER) $(CLIENT)
+all: $(OBJ)
 	@$(MAKE) -C ./libft
-	@$(CC) $(CFLAGS) $(LIBFT) $(FILES) -o $(NAME)
+	@$(CC) $(CFLAGS) -o $(NAME) $(OBJ) $(LIBFT)
 	@echo "[$(GREEN)created$(RESET)]: libft.a & $(NAME)"
 
 clean:
