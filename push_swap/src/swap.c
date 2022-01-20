@@ -6,13 +6,13 @@
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 07:12:07 by jmartin           #+#    #+#             */
-/*   Updated: 2022/01/20 14:20:09 by jmartin          ###   ########.fr       */
+/*   Updated: 2022/01/20 17:54:28 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-void	swap_items(int *item_1, int *item_2)
+static void	swap_items(int *item_1, int *item_2)
 {
 	int	swap;
 
@@ -27,8 +27,10 @@ void	swap_a(t_bucket *bucket)
 
 	i = stack_items_count(bucket->stack_a, bucket->stack_a_len);
 	if (i > 1)
+	{
 		swap_items(&bucket->stack_a[0], &bucket->stack_a[1]);
-	ft_putendl_fd("sa", 1);
+		ft_putendl_fd("sa", 1);
+	}
 }
 
 void	swap_b(t_bucket *bucket)
@@ -37,8 +39,10 @@ void	swap_b(t_bucket *bucket)
 
 	i = stack_items_count(bucket->stack_b, bucket->stack_b_len);
 	if (i > 1)
+	{
 		swap_items(&bucket->stack_b[0], &bucket->stack_a[1]);
-	ft_putendl_fd("sb", 1);
+		ft_putendl_fd("sb", 1);
+	}
 }
 
 void	swap_ab(t_bucket *bucket)
@@ -52,6 +56,6 @@ void	swap_ab(t_bucket *bucket)
 	{
 		swap_items(&bucket->stack_a[0], &bucket->stack_a[1]);
 		swap_items(&bucket->stack_b[0], &bucket->stack_a[1]);
+		ft_putendl_fd("ss", 1);
 	}
-	ft_putendl_fd("ss", 1);
 }

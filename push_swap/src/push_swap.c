@@ -6,7 +6,7 @@
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 16:18:26 by jmartin           #+#    #+#             */
-/*   Updated: 2022/01/20 14:25:04 by jmartin          ###   ########.fr       */
+/*   Updated: 2022/01/20 18:34:02 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,14 @@ static void	show_staks(t_bucket *bucket)
 	display_stack(bucket->stack_a);
 	ft_putendl_fd("\n\033[1;33mStack B:\033[0m", 1);
 	display_stack(bucket->stack_b);
+	ft_putendl_fd("", 1);
 }
 
 void	push_swap(t_bucket *bucket)
 {
 	push_b(bucket);
+	rotate_a(bucket);
+	reverse_rotate_a(bucket);
 	show_staks(bucket);
 }
 

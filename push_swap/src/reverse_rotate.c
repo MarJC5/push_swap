@@ -6,7 +6,7 @@
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 07:11:31 by jmartin           #+#    #+#             */
-/*   Updated: 2022/01/20 13:19:21 by jmartin          ###   ########.fr       */
+/*   Updated: 2022/01/20 18:33:11 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,10 @@ void	reverse_rotate_a(t_bucket *bucket)
 	tmp = bucket->stack_a[size];
 	if (size > 1)
 	{
-		while (size > 0)
-		{
-			bucket->stack_a[size] = bucket->stack_a[size - 1];
-			size--;
-		}
+		shift_down(bucket->stack_a, size);
+		bucket->stack_a[0] = tmp;
+		ft_putstr_fd("rra", 1);
 	}
-	bucket->stack_a[size] = tmp;
-	ft_putstr_fd("rra", 1);
 }
 
 void	reverse_rotate_b(t_bucket *bucket)
@@ -40,14 +36,10 @@ void	reverse_rotate_b(t_bucket *bucket)
 	tmp = bucket->stack_b[size];
 	if (size > 1)
 	{
-		while (size > 0)
-		{
-			bucket->stack_b[size] = bucket->stack_b[size - 1];
-			size--;
-		}
+		shift_down(bucket->stack_b, size);
+		bucket->stack_b[0] = tmp;
+		ft_putstr_fd("rrb", 1);
 	}
-	bucket->stack_b[size] = tmp;
-	ft_putstr_fd("rrb", 1);
 }
 
 void	reverse_rotate_ab(t_bucket *bucket)

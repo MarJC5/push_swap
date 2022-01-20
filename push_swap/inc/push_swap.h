@@ -6,7 +6,7 @@
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 16:18:21 by jmartin           #+#    #+#             */
-/*   Updated: 2022/01/20 13:32:42 by jmartin          ###   ########.fr       */
+/*   Updated: 2022/01/20 18:18:17 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,12 @@ void	free_bucket(t_bucket *bucket);
 
 void	push_swap(t_bucket *bucket);
 
+void	shift_down(int *stack, int size);
+void	shift_up(int *stack, int size);
+
 void	swap_a(t_bucket *bucket);
 void	swap_b(t_bucket *bucket);
 void	swap_ab(t_bucket *bucket);
-void	swap_items(int *item_1, int *item_2);
 
 void	rotate_a(t_bucket *bucket);
 void	rotate_b(t_bucket *bucket);
@@ -51,6 +53,7 @@ void	push_b(t_bucket *bucket);
 void	display_stack(int *stack);
 void	single_arg_to_int(t_bucket *bucket, char *items);
 void	multiple_args_to_int(t_bucket *bucket, int count, char **items);
+
 int		stack_items_count(int *stack, int stack_count);
 
 #endif
