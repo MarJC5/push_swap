@@ -6,7 +6,7 @@
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 16:18:21 by jmartin           #+#    #+#             */
-/*   Updated: 2022/01/20 18:18:17 by jmartin          ###   ########.fr       */
+/*   Updated: 2022/01/21 00:53:14 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,13 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+# include <limits.h>
 # include "../libft/libft.h"
 
 typedef struct s_bucket
 {
 	int	*stack_a;
 	int	*stack_b;
-	int	stack_a_len;
-	int	stack_b_len;
 }	t_bucket;
 
 void	free_bucket(t_bucket *bucket);
@@ -51,9 +50,14 @@ void	push_a(t_bucket *bucket);
 void	push_b(t_bucket *bucket);
 
 void	display_stack(int *stack);
+void	display_all_stack(t_bucket *bucket);
 void	single_arg_to_int(t_bucket *bucket, char *items);
 void	multiple_args_to_int(t_bucket *bucket, int count, char **items);
 
-int		stack_items_count(int *stack, int stack_count);
+void	is_args_number(char *arg);
+void	is_args_duplicate(int *stack);
+void	is_args_ordered(int *stack);
+
+int		stack_items_count(int *stack);
 
 #endif

@@ -14,6 +14,7 @@ RM		=	rm -rf
 FOLDER	=	src/
 
 FILES	=	args_utils.c \
+			errors_handler.c \
 			push_swap.c \
 			push.c \
 			reverse_rotate.c \

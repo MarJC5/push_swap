@@ -8,7 +8,7 @@
 # Others
 .DS_Store
 .vscode
-./push_swap/push_swap
+push_swap/push_swap
 
 *.obj
 *.elf

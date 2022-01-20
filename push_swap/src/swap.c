@@ -6,7 +6,7 @@
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 07:12:07 by jmartin           #+#    #+#             */
-/*   Updated: 2022/01/20 17:54:28 by jmartin          ###   ########.fr       */
+/*   Updated: 2022/01/21 00:18:59 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	swap_a(t_bucket *bucket)
 {
 	int	i;
 
-	i = stack_items_count(bucket->stack_a, bucket->stack_a_len);
+	i = stack_items_count(bucket->stack_a);
 	if (i > 1)
 	{
 		swap_items(&bucket->stack_a[0], &bucket->stack_a[1]);
@@ -37,7 +37,7 @@ void	swap_b(t_bucket *bucket)
 {
 	int	i;
 
-	i = stack_items_count(bucket->stack_b, bucket->stack_b_len);
+	i = stack_items_count(bucket->stack_b);
 	if (i > 1)
 	{
 		swap_items(&bucket->stack_b[0], &bucket->stack_a[1]);
@@ -47,12 +47,12 @@ void	swap_b(t_bucket *bucket)
 
 void	swap_ab(t_bucket *bucket)
 {
-	int	a;
-	int	b;
+	int	size_a;
+	int	size_b;
 
-	a = stack_items_count(bucket->stack_a, bucket->stack_a_len);
-	b = stack_items_count(bucket->stack_b, bucket->stack_b_len);
-	if (a > 1 && b > 1)
+	size_a = stack_items_count(bucket->stack_a);
+	size_b = stack_items_count(bucket->stack_b);
+	if (size_a > 1 && size_b > 1)
 	{
 		swap_items(&bucket->stack_a[0], &bucket->stack_a[1]);
 		swap_items(&bucket->stack_b[0], &bucket->stack_a[1]);
