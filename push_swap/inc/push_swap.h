@@ -6,7 +6,7 @@
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 16:18:21 by jmartin           #+#    #+#             */
-/*   Updated: 2022/01/20 11:52:09 by jmartin          ###   ########.fr       */
+/*   Updated: 2022/01/20 13:19:17 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ typedef struct s_bucket
 	int	*stack_b;
 	int	stack_a_len;
 	int	stack_b_len;
-	int	stack_len;
 }	t_bucket;
 
 void	free_bucket(t_bucket *bucket);
@@ -36,14 +35,15 @@ void	push_swap(t_bucket *bucket);
 void	swap_a(t_bucket *bucket);
 void	swap_b(t_bucket *bucket);
 void	swap_ab(t_bucket *bucket);
+void	swap_items(int *item_1, int *item_2);
 
-void	rotate_a(void);
-void	rotate_b(void);
-void	rotate_ab(void);
+void	rotate_a(t_bucket *bucket);
+void	rotate_b(t_bucket *bucket);
+void	rotate_ab(t_bucket *bucket);
 
-void	reverse_rotate_a(void);
-void	reverse_rotate_b(void);
-void	reverse_rotate_ab(void);
+void	reverse_rotate_a(t_bucket *bucket);
+void	reverse_rotate_b(t_bucket *bucket);
+void	reverse_rotate_ab(t_bucket *bucket);
 
 void	push_a(void);
 void	push_b(void);

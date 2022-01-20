@@ -6,7 +6,7 @@
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 10:56:49 by jmartin           #+#    #+#             */
-/*   Updated: 2022/01/20 11:57:25 by jmartin          ###   ########.fr       */
+/*   Updated: 2022/01/20 12:26:52 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ void	single_arg_to_int(t_bucket *bucket, char *items)
 		;
 	bucket->stack_a = (int *)malloc(i * sizeof(int));
 	bucket->stack_b = (int *)malloc(i * sizeof(int));
-	bucket->stack_len = i;
 	i = -1;
 	while (split[++i])
 		bucket->stack_a[i] = ft_atoi(split[i]);
@@ -51,7 +50,6 @@ void	multiple_args_to_int(t_bucket *bucket, int count, char **items)
 		;
 	bucket->stack_a = (int *)malloc(i * sizeof(int));
 	bucket->stack_b = (int *)malloc(i * sizeof(int));
-	bucket->stack_len = i;
 	i = 0;
 	while (--count)
 	{
@@ -67,6 +65,6 @@ int	stack_items_count(int *stack, int stack_count)
 	i = -1;
 	while (stack[++i])
 		;
-	stack_count = i;
+	stack_count = i - 1;
 	return (stack_count);
 }

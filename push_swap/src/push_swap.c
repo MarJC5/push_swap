@@ -6,15 +6,24 @@
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 16:18:26 by jmartin           #+#    #+#             */
-/*   Updated: 2022/01/20 11:59:18 by jmartin          ###   ########.fr       */
+/*   Updated: 2022/01/20 13:19:53 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
+static void	show_staks(t_bucket *bucket)
+{
+	ft_putendl_fd("\n\033[1;31mStack A:\033[0m", 1);
+	display_stack(bucket->stack_a);
+	ft_putendl_fd("\n\033[1;33mStack B:\033[0m", 1);
+	display_stack(bucket->stack_b);
+}
+
 void	push_swap(t_bucket *bucket)
 {
-	display_stack(bucket->stack_a);
+	rotate_a(bucket);
+	show_staks(bucket);
 }
 
 int	main(int argc, char **argv)
