@@ -6,7 +6,7 @@
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 19:58:14 by jmartin           #+#    #+#             */
-/*   Updated: 2022/01/21 00:51:13 by jmartin          ###   ########.fr       */
+/*   Updated: 2022/01/21 10:40:09 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,16 @@ void	is_args_duplicate(int *stack)
 	}
 }
 
-void	is_args_ordered(int *stack)
+bool	is_args_ordered(int *stack, int size)
 {
-	(void) stack;
+	int	i;
+
+	i = 1;
+	while (i++ < size)
+	{
+		if (stack[i - 1] > stack[i])
+			return (0);
+	}
+	ft_putendl_fd("OK", 1);
+	return (1);
 }

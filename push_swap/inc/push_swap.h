@@ -6,7 +6,7 @@
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 16:18:21 by jmartin           #+#    #+#             */
-/*   Updated: 2022/01/21 01:04:43 by jmartin          ###   ########.fr       */
+/*   Updated: 2022/01/21 10:30:29 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <limits.h>
+# include <stdbool.h>
 # include "../libft/libft.h"
 
 typedef struct s_bucket
@@ -56,7 +57,7 @@ void	multiple_args_to_int(t_bucket *bucket, int count, char **items);
 
 void	is_args_number(char *arg);
 void	is_args_duplicate(int *stack);
-void	is_args_ordered(int *stack);
+bool	is_args_ordered(int *stack, int size);
 
 int		stack_items_count(int *stack);
 
