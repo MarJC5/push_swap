@@ -6,13 +6,13 @@
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 19:58:14 by jmartin           #+#    #+#             */
-/*   Updated: 2022/01/21 10:40:09 by jmartin          ###   ########.fr       */
+/*   Updated: 2022/01/21 11:36:42 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-void	is_args_number(char *arg)
+bool	is_args_number(char *arg)
 {
 	int	i;
 
@@ -26,11 +26,13 @@ void	is_args_number(char *arg)
 		{
 			ft_putendl_fd("Error", 1);
 			exit(EXIT_FAILURE);
+			return (0);
 		}
 	}
+	return (1);
 }
 
-void	is_args_duplicate(int *stack)
+bool	is_args_duplicate(int *stack)
 {
 	int	i;
 	int	j;
@@ -47,11 +49,13 @@ void	is_args_duplicate(int *stack)
 			{
 				ft_putendl_fd("Error", 1);
 				exit(EXIT_FAILURE);
+				return (0);
 			}
 			j++;
 		}
 		i++;
 	}
+	return (1);
 }
 
 bool	is_args_ordered(int *stack, int size)
@@ -65,5 +69,16 @@ bool	is_args_ordered(int *stack, int size)
 			return (0);
 	}
 	ft_putendl_fd("OK", 1);
+	exit(EXIT_SUCCESS);
+	return (1);
+}
+
+bool	is_args_max_int(int arg)
+{
+	if (arg > INT_MAX)
+	{
+		ft_putendl_fd("Error", 1);
+		exit(EXIT_FAILURE);
+	}
 	return (1);
 }
