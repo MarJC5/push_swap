@@ -6,13 +6,13 @@
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 07:11:58 by jmartin           #+#    #+#             */
-/*   Updated: 2022/01/21 00:15:45 by jmartin          ###   ########.fr       */
+/*   Updated: 2022/01/21 01:03:26 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-void	rotate_a(t_bucket *bucket)
+void	rotate_a(t_bucket *bucket, int msg)
 {
 	int	i;
 	int	size;
@@ -25,11 +25,12 @@ void	rotate_a(t_bucket *bucket)
 	{
 		shift_up(bucket->stack_a, size);
 		bucket->stack_a[size] = tmp;
-		ft_putendl_fd("ra", 1);
+		if (msg)
+			ft_putendl_fd("ra", 1);
 	}
 }
 
-void	rotate_b(t_bucket *bucket)
+void	rotate_b(t_bucket *bucket, int msg)
 {
 	int	i;
 	int	size;
@@ -42,12 +43,14 @@ void	rotate_b(t_bucket *bucket)
 	{
 		shift_up(bucket->stack_b, size);
 		bucket->stack_b[size] = tmp;
-		ft_putendl_fd("rb", 1);
+		if (msg)
+			ft_putendl_fd("rb", 1);
 	}
 }
 
 void	rotate_ab(t_bucket *bucket)
 {
-	(void)bucket;
+	rotate_a(bucket, 0);
+	rotate_b(bucket, 0);
 	ft_putendl_fd("rr", 1);
 }

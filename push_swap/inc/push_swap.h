@@ -6,7 +6,7 @@
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 16:18:21 by jmartin           #+#    #+#             */
-/*   Updated: 2022/01/21 00:53:14 by jmartin          ###   ########.fr       */
+/*   Updated: 2022/01/21 01:04:43 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,16 +34,16 @@ void	push_swap(t_bucket *bucket);
 void	shift_down(int *stack, int size);
 void	shift_up(int *stack, int size);
 
-void	swap_a(t_bucket *bucket);
-void	swap_b(t_bucket *bucket);
+void	swap_a(t_bucket *bucket, int msg);
+void	swap_b(t_bucket *bucket, int msg);
 void	swap_ab(t_bucket *bucket);
 
-void	rotate_a(t_bucket *bucket);
-void	rotate_b(t_bucket *bucket);
+void	rotate_a(t_bucket *bucket, int msg);
+void	rotate_b(t_bucket *bucket, int msg);
 void	rotate_ab(t_bucket *bucket);
 
-void	reverse_rotate_a(t_bucket *bucket);
-void	reverse_rotate_b(t_bucket *bucket);
+void	reverse_rotate_a(t_bucket *bucket, int msg);
+void	reverse_rotate_b(t_bucket *bucket, int msg);
 void	reverse_rotate_ab(t_bucket *bucket);
 
 void	push_a(t_bucket *bucket);

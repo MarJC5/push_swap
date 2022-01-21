@@ -6,7 +6,7 @@
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 07:12:07 by jmartin           #+#    #+#             */
-/*   Updated: 2022/01/21 00:18:59 by jmartin          ###   ########.fr       */
+/*   Updated: 2022/01/21 01:04:40 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static void	swap_items(int *item_1, int *item_2)
 	*item_1 = swap;
 }
 
-void	swap_a(t_bucket *bucket)
+void	swap_a(t_bucket *bucket, int msg)
 {
 	int	i;
 
@@ -29,11 +29,12 @@ void	swap_a(t_bucket *bucket)
 	if (i > 1)
 	{
 		swap_items(&bucket->stack_a[0], &bucket->stack_a[1]);
-		ft_putendl_fd("sa", 1);
+		if (msg)
+			ft_putendl_fd("sa", 1);
 	}
 }
 
-void	swap_b(t_bucket *bucket)
+void	swap_b(t_bucket *bucket, int msg)
 {
 	int	i;
 
@@ -41,21 +42,14 @@ void	swap_b(t_bucket *bucket)
 	if (i > 1)
 	{
 		swap_items(&bucket->stack_b[0], &bucket->stack_a[1]);
-		ft_putendl_fd("sb", 1);
+		if (msg)
+			ft_putendl_fd("sb", 1);
 	}
 }
 
 void	swap_ab(t_bucket *bucket)
 {
-	int	size_a;
-	int	size_b;
-
-	size_a = stack_items_count(bucket->stack_a);
-	size_b = stack_items_count(bucket->stack_b);
-	if (size_a > 1 && size_b > 1)
-	{
-		swap_items(&bucket->stack_a[0], &bucket->stack_a[1]);
-		swap_items(&bucket->stack_b[0], &bucket->stack_a[1]);
-		ft_putendl_fd("ss", 1);
-	}
+	swap_a(bucket, 0);
+	swap_b(bucket, 0);
+	ft_putendl_fd("ss", 1);
 }
