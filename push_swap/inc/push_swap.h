@@ -6,7 +6,7 @@
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 16:18:21 by jmartin           #+#    #+#             */
-/*   Updated: 2022/01/24 09:20:04 by jmartin          ###   ########.fr       */
+/*   Updated: 2022/01/24 15:04:24 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,14 @@
 
 typedef struct s_bucket
 {
+	int	*numbers;
 	int	*stack_a;
 	int	*stack_b;
 }	t_bucket;
+
+void	display_stack(int *stack);
+void	display_all_stack(t_bucket *bucket);
+void	display_sorting(t_bucket *bucket);
 
 void	free_bucket(t_bucket *bucket);
 
@@ -35,6 +40,7 @@ void	push_swap(t_bucket *bucket);
 void	shift_down(int *stack, int size);
 void	shift_up(int *stack, int size);
 
+void	swap_items(int *item_1, int *item_2);
 void	swap_a(t_bucket *bucket, int msg);
 void	swap_b(t_bucket *bucket, int msg);
 void	swap_ab(t_bucket *bucket);
@@ -50,20 +56,19 @@ void	reverse_rotate_ab(t_bucket *bucket);
 void	push_a(t_bucket *bucket);
 void	push_b(t_bucket *bucket);
 
-void	display_stack(int *stack);
-void	display_all_stack(t_bucket *bucket);
 void	single_arg_to_int(t_bucket *bucket, char *items);
 void	multiple_args_to_int(t_bucket *bucket, int count, char **items);
 
 void	basic_sort(t_bucket *bucket);
+void	quick_sort(t_bucket *bucket);
 void	quick_sort_a(t_bucket *bucket);
 void	quick_sort_b(t_bucket *bucket);
 
+int		stack_items_count(int *stack);
+
 bool	is_args_number(char *arg);
 bool	is_args_duplicate(int *stack);
-bool	is_args_ordered(int *stack, int size);
+bool	is_args_ordered(int *stack, int size, int msg);
 bool	is_args_max_int(int arg);
-
-int		stack_items_count(int *stack);
 
 #endif

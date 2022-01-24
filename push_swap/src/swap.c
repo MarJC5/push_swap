@@ -6,13 +6,13 @@
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 07:12:07 by jmartin           #+#    #+#             */
-/*   Updated: 2022/01/21 01:04:40 by jmartin          ###   ########.fr       */
+/*   Updated: 2022/01/24 11:08:59 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-static void	swap_items(int *item_1, int *item_2)
+void	swap_items(int *item_1, int *item_2)
 {
 	int	swap;
 
@@ -26,7 +26,7 @@ void	swap_a(t_bucket *bucket, int msg)
 	int	i;
 
 	i = stack_items_count(bucket->stack_a);
-	if (i > 1)
+	if (i >= 1)
 	{
 		swap_items(&bucket->stack_a[0], &bucket->stack_a[1]);
 		if (msg)
@@ -39,7 +39,7 @@ void	swap_b(t_bucket *bucket, int msg)
 	int	i;
 
 	i = stack_items_count(bucket->stack_b);
-	if (i > 1)
+	if (i >= 1)
 	{
 		swap_items(&bucket->stack_b[0], &bucket->stack_a[1]);
 		if (msg)

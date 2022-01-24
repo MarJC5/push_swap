@@ -6,11 +6,38 @@
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 10:56:49 by jmartin           #+#    #+#             */
-/*   Updated: 2022/01/21 11:23:01 by jmartin          ###   ########.fr       */
+/*   Updated: 2022/01/24 15:00:27 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
+
+static int	count_lower(int n, int *nbrs, int len)
+{
+	int i;
+	int ret;
+
+	i = -1;
+	ret = -1;
+	while (++i < len)
+		if (n >= nbrs[i])
+			ret++;
+	return (ret);
+}
+
+static int	*format_ints(int *nbrs, int len)
+{
+	int *a;
+	int i;
+
+	i = -1;
+	a = (int *)malloc(len * sizeof(*a));
+	if (!a)
+		return (NULL);
+	while (++i < len)
+		a[i] = count_lower(nbrs[i], nbrs, len) + 1;
+	return (a);
+}
 
 void	single_arg_to_int(t_bucket *bucket, char *items)
 {
@@ -22,11 +49,12 @@ void	single_arg_to_int(t_bucket *bucket, char *items)
 	split = ft_split(items, ' ');
 	while (split[++i])
 		;
-	bucket->stack_a = (int *)malloc(i * sizeof(int));
+	bucket->numbers = (int *)malloc(i * sizeof(int));
 	bucket->stack_b = (int *)malloc(i * sizeof(int));
 	i = -1;
 	while (split[++i])
-		bucket->stack_a[i] = ft_atoi(split[i]);
+		bucket->numbers[i] = ft_atoi(split[i]) + 1;
+	bucket->stack_a = format_ints(bucket->numbers, i);
 	while (i--)
 		free(split[i]);
 	free(split);
@@ -37,47 +65,15 @@ void	multiple_args_to_int(t_bucket *bucket, int count, char **items)
 	int	nbr;
 	int	i;
 
-	i = 0;
-	while (++i < count)
-		;
-	bucket->stack_a = (int *)malloc(i * sizeof(int));
+	i = count - 1;
+	bucket->numbers = (int *)malloc(i * sizeof(int));
 	bucket->stack_b = (int *)malloc(i * sizeof(int));
 	i = 0;
 	while (--count)
 	{
 		is_args_number(items[i + 1]);
 		nbr = ft_atoi(items[i + 1]);
-		bucket->stack_a[i++] = nbr;
+		bucket->numbers[i++] = nbr + 1;
 	}
-}
-
-int	stack_items_count(int *stack)
-{
-	int	i;
-
-	i = -1;
-	while (stack[++i])
-		;
-	return (i - 1);
-}
-
-void	display_stack(int *stack)
-{
-	int	i;
-
-	i = -1;
-	while (stack[++i])
-	{
-		ft_putnbr_fd(stack[i], 1);
-		ft_putendl_fd("", 1);
-	}
-}
-
-void	display_all_stack(t_bucket *bucket)
-{
-	ft_putendl_fd("\n\033[1;31mStack A:\033[0m", 1);
-	display_stack(bucket->stack_a);
-	ft_putendl_fd("\n\033[1;33mStack B:\033[0m", 1);
-	display_stack(bucket->stack_b);
-	ft_putendl_fd("", 1);
+	bucket->stack_a = format_ints(bucket->numbers, i);
 }

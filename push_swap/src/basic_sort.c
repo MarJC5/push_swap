@@ -6,7 +6,7 @@
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 09:17:17 by jmartin           #+#    #+#             */
-/*   Updated: 2022/01/24 09:17:43 by jmartin          ###   ########.fr       */
+/*   Updated: 2022/01/24 14:52:42 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,16 @@
 
 void	basic_sort(t_bucket *bucket)
 {
-	(void) bucket;
+	int	size;
+
+	size = stack_items_count(bucket->numbers);
+	if (bucket->stack_a[0] > bucket->stack_a[(size + 1) / 2])
+		swap_a(bucket, 1);
+	if (bucket->stack_a[1] > bucket->stack_a[size])
+	{
+		reverse_rotate_a(bucket, 1);
+		if (bucket->stack_a[0] > bucket->stack_a[1])
+			swap_a(bucket, 1);
+	}
+	is_args_ordered(bucket->stack_a, stack_items_count(bucket->stack_a), 1);
 }

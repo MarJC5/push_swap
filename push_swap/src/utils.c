@@ -6,7 +6,7 @@
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 11:06:57 by jmartin           #+#    #+#             */
-/*   Updated: 2022/01/20 20:03:51 by jmartin          ###   ########.fr       */
+/*   Updated: 2022/01/24 13:38:39 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ void	shift_up(int *stack, int size)
 	}
 }
 
+
 void	shift_down(int *stack, int size)
 {
 	if (size > 1)
@@ -47,4 +48,14 @@ void	shift_down(int *stack, int size)
 			size--;
 		}
 	}
+}
+
+int	stack_items_count(int *stack)
+{
+	int	i;
+
+	i = -1;
+	while (stack[++i])
+		;
+	return (i - 1);
 }

@@ -6,7 +6,7 @@
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 19:58:14 by jmartin           #+#    #+#             */
-/*   Updated: 2022/01/21 11:36:42 by jmartin          ###   ########.fr       */
+/*   Updated: 2022/01/24 14:58:22 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,18 +58,21 @@ bool	is_args_duplicate(int *stack)
 	return (1);
 }
 
-bool	is_args_ordered(int *stack, int size)
+bool	is_args_ordered(int *stack, int size, int msg)
 {
 	int	i;
 
-	i = 1;
+	i = 0;
 	while (i++ < size)
 	{
 		if (stack[i - 1] > stack[i])
 			return (0);
 	}
-	ft_putendl_fd("OK", 1);
-	exit(EXIT_SUCCESS);
+	if (msg)
+	{
+		ft_putendl_fd("\n\033[1;32mOK\033[1;0m", 1);
+		exit(EXIT_SUCCESS);
+	}
 	return (1);
 }
 

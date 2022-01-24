@@ -15,6 +15,7 @@ FOLDER	=	src/
 
 FILES	=	args_utils.c \
 			basic_sort.c \
+			display.c \
 			errors_handler.c \
 			push_swap.c \
 			push.c \
