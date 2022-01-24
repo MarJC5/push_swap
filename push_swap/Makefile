@@ -14,9 +14,11 @@ RM		=	rm -rf
 FOLDER	=	src/
 
 FILES	=	args_utils.c \
+			basic_sort.c \
 			errors_handler.c \
 			push_swap.c \
 			push.c \
+			quick_sort.c \
 			reverse_rotate.c \
 			rotate.c \
 			swap.c \
