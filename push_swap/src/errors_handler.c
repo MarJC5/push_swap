@@ -6,7 +6,7 @@
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 19:58:14 by jmartin           #+#    #+#             */
-/*   Updated: 2022/01/24 14:58:22 by jmartin          ###   ########.fr       */
+/*   Updated: 2022/01/24 18:56:11 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,10 +69,7 @@ bool	is_args_ordered(int *stack, int size, int msg)
 			return (0);
 	}
 	if (msg)
-	{
-		ft_putendl_fd("\n\033[1;32mOK\033[1;0m", 1);
-		exit(EXIT_SUCCESS);
-	}
+		ft_putendl_fd("\033[1;32mOK\033[1;0m", 1);
 	return (1);
 }
 

@@ -6,7 +6,7 @@
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 11:06:57 by jmartin           #+#    #+#             */
-/*   Updated: 2022/01/24 13:38:39 by jmartin          ###   ########.fr       */
+/*   Updated: 2022/01/24 18:41:20 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ void	free_bucket(t_bucket *bucket)
 {
 	if (bucket)
 	{
+		free(bucket->numbers);
 		free(bucket->stack_a);
 		free(bucket->stack_b);
 		free(bucket);
