@@ -6,38 +6,35 @@
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 09:13:50 by jmartin           #+#    #+#             */
-/*   Updated: 2022/01/25 14:36:19 by jmartin          ###   ########.fr       */
+/*   Updated: 2022/01/26 13:59:50 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-static int	median(int size)
-{
-	int	median;
-
-	if (size % 2 == 0)
-		median = (((size - 1) / 2 ) + (size / 2)) / 2;
-	else
-		median = size / 2;
-	return (median);
-}
-
 void	quick_sort(t_bucket *bucket)
 {
-	int	i;
-	int	size;
-
-	i = 0;
-	size = stack_items_count(bucket->stack_a);
 	display_sorting(bucket);
+	ft_putendl_fd("\n--------------------------------", 1);
+	ft_putendl_fd("\033[1mOperations:\033[0m", 1);
 	quick_sort_a(bucket);
-	display_all_stack(bucket);
 }
 
 void	quick_sort_a(t_bucket *bucket)
 {
-	(void) bucket;
+	int	i;
+	int	size;
+	int	pivot;
+
+	i = 0;
+	size = stack_items_count(bucket->stack_a);
+	while (size-- > 1)
+	{
+		pivot = bucket->stack_a[0];
+		if (bucket->stack_a[++i] < pivot)
+			push_b(bucket);
+	}
+	display_all_stack(bucket);
 }
 
 void	quick_sort_b(t_bucket *bucket)
