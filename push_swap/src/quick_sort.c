@@ -6,39 +6,41 @@
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 09:13:50 by jmartin           #+#    #+#             */
-/*   Updated: 2022/01/26 13:59:50 by jmartin          ###   ########.fr       */
+/*   Updated: 2022/01/27 12:15:26 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-void	quick_sort(t_bucket *bucket)
+static void	sort_bucket_b(t_bucket *bucket, int pivot)
 {
-	display_sorting(bucket);
-	ft_putendl_fd("\n--------------------------------", 1);
-	ft_putendl_fd("\033[1mOperations:\033[0m", 1);
-	quick_sort_a(bucket);
+	int	i;
+	int	size;
+
+	i = 0;
+	size = stack_items_count(bucket->stack_b);
+	pivot = bucket->stack_b[0];
 }
 
-void	quick_sort_a(t_bucket *bucket)
+void	quick_sort(t_bucket *bucket)
 {
 	int	i;
 	int	size;
 	int	pivot;
 
 	i = 0;
+	pivot = bucket->stack_a[0];
 	size = stack_items_count(bucket->stack_a);
-	while (size-- > 1)
+	display_sorting(bucket);
+	ft_putendl_fd("\n--------------------------------", 1);
+	push_b(bucket);
+	while (++i < size)
 	{
-		pivot = bucket->stack_a[0];
-		if (bucket->stack_a[++i] < pivot)
+		if (bucket->stack_a[i] < pivot)
 			push_b(bucket);
+		else
+			rotate_a(bucket, 1);
+		sort_bucket_b(bucket, bucket->stack_b[0]);
 	}
 	display_all_stack(bucket);
 }
-
-void	quick_sort_b(t_bucket *bucket)
-{
-	(void) bucket;
-}
-
