@@ -6,7 +6,7 @@
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 11:06:57 by jmartin           #+#    #+#             */
-/*   Updated: 2022/01/24 18:41:20 by jmartin          ###   ########.fr       */
+/*   Updated: 2022/02/09 12:43:43 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ void	shift_up(int *stack, int size)
 		}
 	}
 }
-
 
 void	shift_down(int *stack, int size)
 {

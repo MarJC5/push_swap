@@ -6,7 +6,7 @@
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 10:56:49 by jmartin           #+#    #+#             */
-/*   Updated: 2022/02/09 11:54:47 by jmartin          ###   ########.fr       */
+/*   Updated: 2022/02/09 12:43:29 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static int	count_lower(int n, int *nbrs, int len)
 {
-	int i;
-	int ret;
+	int	i;
+	int	ret;
 
 	i = -1;
 	ret = 0;
@@ -27,8 +27,8 @@ static int	count_lower(int n, int *nbrs, int len)
 
 static int	*format_ints(int *nbrs, int len)
 {
-	int *a;
-	int i;
+	int	*a;
+	int	i;
 
 	i = -1;
 	a = (int *)malloc(len * sizeof(int));
