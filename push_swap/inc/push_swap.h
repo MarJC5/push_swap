@@ -6,7 +6,7 @@
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 16:18:21 by jmartin           #+#    #+#             */
-/*   Updated: 2022/01/25 14:36:15 by jmartin          ###   ########.fr       */
+/*   Updated: 2022/02/09 09:48:56 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,15 +60,13 @@ void	single_arg_to_int(t_bucket *bucket, char *items);
 void	multiple_args_to_int(t_bucket *bucket, int count, char **items);
 
 void	basic_sort(t_bucket *bucket);
-void	quick_sort(t_bucket *bucket);
-void	quick_sort_a(t_bucket *bucket);
-void	quick_sort_b(t_bucket *bucket);
+void	radix_sort(t_bucket *bucket);
 
 int		stack_items_count(int *stack);
 
 bool	is_args_number(char *arg);
 bool	is_args_duplicate(int *stack);
 bool	is_args_ordered(int *stack, int size, int msg);
-bool	is_args_max_int(int arg);
+bool	is_args_max_int(long int arg, t_bucket *bucket);
 
 #endif

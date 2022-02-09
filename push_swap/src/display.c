@@ -6,7 +6,7 @@
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 12:39:10 by jmartin           #+#    #+#             */
-/*   Updated: 2022/01/26 13:55:27 by jmartin          ###   ########.fr       */
+/*   Updated: 2022/02/09 11:39:19 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,11 @@
 void	display_stack(int *stack)
 {
 	int	i;
+	int	size;
 
 	i = -1;
-	while (stack[++i])
+	size = stack_items_count(stack);
+	while (++i <= size)
 	{
 		ft_putnbr_fd(stack[i], 1);
 		ft_putstr_fd(" ", 1);

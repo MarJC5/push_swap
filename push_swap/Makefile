@@ -19,7 +19,7 @@ FILES	=	args_utils.c \
 			errors_handler.c \
 			push_swap.c \
 			push.c \
-			quick_sort.c \
+			radix_sort.c \
 			reverse_rotate.c \
 			rotate.c \
 			swap.c \

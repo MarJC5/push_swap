@@ -6,7 +6,7 @@
 #    By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/12 18:11:28 by jmartin           #+#    #+#              #
-#    Updated: 2021/12/13 16:35:08 by jmartin          ###   ########.fr        #
+#    Updated: 2022/02/09 09:52:53 by jmartin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ CC			= 	gcc
 RM			=	rm -f
 AR			=	ar -rcs
 FILES		= 	ft_atoi.c \
+				ft_atol.c \
 				ft_bzero.c \
 				ft_isalnum.c \
 				ft_isalpha.c \

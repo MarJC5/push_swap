@@ -6,7 +6,7 @@
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 10:56:49 by jmartin           #+#    #+#             */
-/*   Updated: 2022/01/24 15:00:27 by jmartin          ###   ########.fr       */
+/*   Updated: 2022/02/09 11:54:47 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static int	count_lower(int n, int *nbrs, int len)
 	int ret;
 
 	i = -1;
-	ret = -1;
+	ret = 0;
 	while (++i < len)
 		if (n >= nbrs[i])
 			ret++;
@@ -31,11 +31,11 @@ static int	*format_ints(int *nbrs, int len)
 	int i;
 
 	i = -1;
-	a = (int *)malloc(len * sizeof(*a));
+	a = (int *)malloc(len * sizeof(int));
 	if (!a)
 		return (NULL);
 	while (++i < len)
-		a[i] = count_lower(nbrs[i], nbrs, len) + 1;
+		a[i] = count_lower(nbrs[i], nbrs, len);
 	return (a);
 }
 
@@ -43,6 +43,8 @@ void	single_arg_to_int(t_bucket *bucket, char *items)
 {
 	char	**split;
 	int		i;
+	int		j;
+	int		nbr;
 
 	i = -1;
 	is_args_number(items);
@@ -51,29 +53,32 @@ void	single_arg_to_int(t_bucket *bucket, char *items)
 		;
 	bucket->numbers = (int *)malloc(i * sizeof(int));
 	bucket->stack_b = (int *)malloc(i * sizeof(int));
-	i = -1;
-	while (split[++i])
-		bucket->numbers[i] = ft_atoi(split[i]) + 1;
+	j = -1;
+	while (++j < i)
+	{
+		is_args_max_int(ft_atol(split[j]), bucket);
+		nbr = ft_atoi(split[j]);
+		bucket->numbers[j] = nbr;
+	}
 	bucket->stack_a = format_ints(bucket->numbers, i);
-	while (i--)
-		free(split[i]);
-	free(split);
 }
 
 void	multiple_args_to_int(t_bucket *bucket, int count, char **items)
 {
 	int	nbr;
 	int	i;
+	int	j;
 
 	i = count - 1;
 	bucket->numbers = (int *)malloc(i * sizeof(int));
 	bucket->stack_b = (int *)malloc(i * sizeof(int));
-	i = 0;
-	while (--count)
+	j = -1;
+	while (++j < i)
 	{
-		is_args_number(items[i + 1]);
-		nbr = ft_atoi(items[i + 1]);
-		bucket->numbers[i++] = nbr + 1;
+		is_args_number(items[j + 1]);
+		is_args_max_int(ft_atol(items[j + 1]), bucket);
+		nbr = ft_atoi(items[j + 1]);
+		bucket->numbers[j] = nbr;
 	}
 	bucket->stack_a = format_ints(bucket->numbers, i);
 }

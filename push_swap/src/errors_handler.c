@@ -6,7 +6,7 @@
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 19:58:14 by jmartin           #+#    #+#             */
-/*   Updated: 2022/01/26 13:59:15 by jmartin          ###   ########.fr       */
+/*   Updated: 2022/02/09 09:48:29 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,10 +77,14 @@ bool	is_args_ordered(int *stack, int size, int msg)
 	return (1);
 }
 
-bool	is_args_max_int(int arg)
+bool	is_args_max_int(long int arg, t_bucket *bucket)
 {
+	int	i;
+
+	i = 0;
 	if (arg > INT_MAX)
 	{
+		free_bucket(bucket);
 		ft_putendl_fd("Error", 1);
 		exit(EXIT_FAILURE);
 	}

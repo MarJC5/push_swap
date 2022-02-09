@@ -6,7 +6,7 @@
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 21:30:49 by jmartin           #+#    #+#             */
-/*   Updated: 2021/10/22 12:53:22 by jmartin          ###   ########.fr       */
+/*   Updated: 2022/02/09 10:01:55 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ int		ft_isprint(int c);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
 
-int		ft_atoi(const char *str);
+int			ft_atoi(const char *str);
+long int	ft_atol(const char *str);
 
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 
