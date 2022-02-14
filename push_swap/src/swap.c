@@ -6,7 +6,7 @@
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 07:12:07 by jmartin           #+#    #+#             */
-/*   Updated: 2022/01/24 11:08:59 by jmartin          ###   ########.fr       */
+/*   Updated: 2022/02/14 10:11:04 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	swap_b(t_bucket *bucket, int msg)
 	i = stack_items_count(bucket->stack_b);
 	if (i >= 1)
 	{
-		swap_items(&bucket->stack_b[0], &bucket->stack_a[1]);
+		swap_items(&bucket->stack_b[0], &bucket->stack_b[1]);
 		if (msg)
 			ft_putendl_fd("sb", 1);
 	}
