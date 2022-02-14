@@ -6,7 +6,7 @@
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 16:18:26 by jmartin           #+#    #+#             */
-/*   Updated: 2022/02/09 12:44:18 by jmartin          ###   ########.fr       */
+/*   Updated: 2022/02/14 07:48:24 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,10 @@ void	push_swap(t_bucket *bucket)
 			, 0))
 	{
 		if (stack_items_count(bucket->stack_a) < 3)
-			basic_sort(bucket);
-		else if (stack_items_count(bucket->stack_a) >= 3)
+			basic_sort(bucket, bucket->stack_a);
+		else if (stack_items_count(bucket->stack_a) <= 5)
+			medium_sort(bucket);
+		else if (stack_items_count(bucket->stack_a) >= 5)
 			radix_sort(bucket);
 	}
 	if (is_args_ordered(bucket->stack_a, stack_items_count(bucket->stack_a), 1))
