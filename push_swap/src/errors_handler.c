@@ -6,7 +6,7 @@
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 19:58:14 by jmartin           #+#    #+#             */
-/*   Updated: 2022/02/09 09:48:29 by jmartin          ###   ########.fr       */
+/*   Updated: 2022/02/09 19:59:59 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ bool	is_args_ordered(int *stack, int size, int msg)
 	}
 	if (msg)
 	{
+		ft_putendl_fd("\n--------------------------------", 1);
 		ft_putstr_fd("\033[1;32mStack A\033[0m --> ", 1);
 		display_stack(stack);
 		ft_putendl_fd("\n--------------------------------", 1);
