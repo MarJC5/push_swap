@@ -6,7 +6,7 @@
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 07:11:58 by jmartin           #+#    #+#             */
-/*   Updated: 2022/02/14 14:11:29 by jmartin          ###   ########.fr       */
+/*   Updated: 2022/02/15 11:25:25 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,13 @@
 
 void	rotate_a(t_bucket *bucket, int msg)
 {
-	int	i;
-	int	size;
 	int	tmp;
 
-	i = 0;
-	size = stack_items_count(bucket->stack_a);
 	tmp = bucket->stack_a[0];
-	if (size > 1)
+	if (*bucket->a_size > 1)
 	{
-		shift_up(bucket->stack_a, size);
-		bucket->stack_a[size] = tmp;
+		shift_up(bucket->stack_a, *bucket->a_size);
+		bucket->stack_a[*bucket->a_size] = tmp;
 		if (msg)
 			ft_putendl_fd("ra", 1);
 	}
@@ -32,17 +28,13 @@ void	rotate_a(t_bucket *bucket, int msg)
 
 void	rotate_b(t_bucket *bucket, int msg)
 {
-	int	i;
-	int	size;
 	int	tmp;
 
-	i = 0;
-	size = stack_items_count(bucket->stack_b) + 1;
 	tmp = bucket->stack_b[0];
-	if (size > 1)
+	if (*bucket->b_size > 1)
 	{
-		shift_up(bucket->stack_b, size);
-		bucket->stack_b[size - 1] = tmp;
+		shift_up(bucket->stack_b, *bucket->b_size);
+		bucket->stack_b[*bucket->b_size] = tmp;
 		if (msg)
 			ft_putendl_fd("rb", 1);
 	}

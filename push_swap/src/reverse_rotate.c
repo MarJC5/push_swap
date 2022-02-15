@@ -6,7 +6,7 @@
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 07:11:31 by jmartin           #+#    #+#             */
-/*   Updated: 2022/01/24 10:49:37 by jmartin          ###   ########.fr       */
+/*   Updated: 2022/02/15 11:23:28 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,12 @@
 
 void	reverse_rotate_a(t_bucket *bucket, int msg)
 {
-	int	size;
 	int	tmp;
 
-	size = stack_items_count(bucket->stack_a);
-	tmp = bucket->stack_a[size];
-	if (size > 1)
+	tmp = bucket->stack_a[*bucket->a_size];
+	if (*bucket->a_size > 1)
 	{
-		shift_down(bucket->stack_a, size);
+		shift_down(bucket->stack_a, *bucket->a_size);
 		bucket->stack_a[0] = tmp;
 		if (msg)
 			ft_putendl_fd("rra", 1);
@@ -30,14 +28,12 @@ void	reverse_rotate_a(t_bucket *bucket, int msg)
 
 void	reverse_rotate_b(t_bucket *bucket, int msg)
 {
-	int	size;
 	int	tmp;
 
-	size = stack_items_count(bucket->stack_b);
-	tmp = bucket->stack_b[size];
-	if (size > 1)
+	tmp = bucket->stack_b[*bucket->b_size];
+	if (*bucket->b_size > 1)
 	{
-		shift_down(bucket->stack_b, size);
+		shift_down(bucket->stack_b, *bucket->b_size);
 		bucket->stack_b[0] = tmp;
 		if (msg)
 			ft_putendl_fd("rrb", 1);

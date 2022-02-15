@@ -6,7 +6,7 @@
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 19:58:14 by jmartin           #+#    #+#             */
-/*   Updated: 2022/02/15 08:12:17 by jmartin          ###   ########.fr       */
+/*   Updated: 2022/02/15 11:33:40 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,18 +32,16 @@ bool	is_args_number(char *arg)
 	return (1);
 }
 
-bool	is_args_duplicate(int *stack)
+bool	is_args_duplicate(int *stack, int stack_size)
 {
 	int	i;
 	int	j;
-	int	size;
 
 	i = 0;
-	size = stack_items_count(stack);
-	while (i <= size)
+	while (i <= stack_size)
 	{
 		j = i + 1;
-		while (j <= size)
+		while (j <= stack_size)
 		{
 			if (stack[i] == stack[j])
 			{
@@ -62,8 +60,8 @@ bool	is_args_ordered(int *stack, int size, int msg)
 {
 	int	i;
 
-	i = 0;
-	while (i++ < size)
+	i = -1;
+	while (++i < size)
 	{
 		if (stack[i - 1] > stack[i])
 			return (0);
@@ -72,7 +70,7 @@ bool	is_args_ordered(int *stack, int size, int msg)
 	{
 		ft_putendl_fd("\n--------------------------------", 1);
 		ft_putstr_fd("\033[1;32mStack A\033[0m --> ", 1);
-		display_stack(stack);
+		display_stack(stack, &size);
 		ft_putendl_fd("\n--------------------------------", 1);
 	}
 	return (1);
@@ -92,12 +90,9 @@ bool	is_args_max_int(long int arg, t_bucket *bucket)
 	return (1);
 }
 
-bool	is_stack_empty(int *stack)
+bool	is_stack_empty(int *stack_count)
 {
-	int	size;
-
-	size = stack_items_count(stack);
-	if (size >= 0)
+	if (stack_count >= 0)
 		return (1);
 	return (0);
 }

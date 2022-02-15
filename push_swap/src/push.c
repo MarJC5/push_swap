@@ -6,7 +6,7 @@
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 07:20:36 by jmartin           #+#    #+#             */
-/*   Updated: 2022/02/15 08:06:41 by jmartin          ###   ########.fr       */
+/*   Updated: 2022/02/15 11:22:20 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,15 @@ void	push_a(t_bucket *bucket)
 	int	size;
 	int	tmp;
 
-	size = stack_items_count(bucket->stack_a) + 1;
-	if (size > 0)
+	*bucket->a_size += 1;
+	if (*bucket->a_size > 0)
 	{
 		tmp = bucket->stack_b[0];
-		shift_down(bucket->stack_a, size);
+		shift_down(bucket->stack_a, *bucket->a_size);
 		bucket->stack_a[0] = tmp;
-		size = stack_items_count(bucket->stack_b) + 1;
-		shift_up(bucket->stack_b, size);
-		bucket->stack_b[size - 1] = 0;
+		shift_up(bucket->stack_b, *bucket->b_size + 1);
+		bucket->stack_b[*bucket->b_size - 1] = 0;
+		*bucket->b_size -= 1;
 	}
 	ft_putendl_fd("pa", 1);
 }
@@ -35,7 +35,7 @@ void	push_b(t_bucket *bucket)
 	int	size;
 	int	tmp;
 
-	size = stack_items_count(bucket->stack_a);
+	size = *bucket->a_size;
 	if (size > 0)
 	{
 		tmp = bucket->stack_a[0];

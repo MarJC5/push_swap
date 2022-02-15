@@ -6,20 +6,18 @@
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 09:17:17 by jmartin           #+#    #+#             */
-/*   Updated: 2022/02/14 16:29:23 by jmartin          ###   ########.fr       */
+/*   Updated: 2022/02/15 11:05:30 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-void	basic_sort_a(t_bucket *bucket)
+void	basic_sort(t_bucket *bucket, int stack_a_size)
 {
-	int	size;
-
-	size = stack_items_count(bucket->stack_a);
-	if (bucket->stack_a[0] > bucket->stack_a[(size + 1) / 2])
+	ft_putnbr_fd(stack_a_size, 1);
+	if (bucket->stack_a[0] > bucket->stack_a[stack_a_size / 2])
 		swap_a(bucket, 1);
-	if (bucket->stack_a[1] > bucket->stack_a[size])
+	if (bucket->stack_a[1] > bucket->stack_a[stack_a_size])
 	{
 		reverse_rotate_a(bucket, 1);
 		if (bucket->stack_a[0] > bucket->stack_a[1])
@@ -27,25 +25,10 @@ void	basic_sort_a(t_bucket *bucket)
 	}
 }
 
-void	basic_sort_b(t_bucket *bucket)
+/*void	medium_sort(t_bucket *bucket, int *stack_a_size)
 {
 	int	size;
 
-	size = stack_items_count(bucket->stack_b);
-	if (bucket->stack_b[0] > bucket->stack_b[(size + 1) / 2])
-		swap_b(bucket, 1);
-	if (bucket->stack_b[1] > bucket->stack_b[size])
-	{
-		reverse_rotate_b(bucket, 1);
-		if (bucket->stack_b[0] > bucket->stack_b[1])
-			swap_b(bucket, 1);
-	}
-}
-
-void	medium_sort(t_bucket *bucket)
-{
-	int	size;
-
-	size = stack_items_count(bucket->stack_a);
+	size = stack_a_size;
 	display_all_stack(bucket);
-}
+}*/
