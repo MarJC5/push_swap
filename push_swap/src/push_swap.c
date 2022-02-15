@@ -6,7 +6,7 @@
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 16:18:26 by jmartin           #+#    #+#             */
-/*   Updated: 2022/02/14 10:41:24 by jmartin          ###   ########.fr       */
+/*   Updated: 2022/02/15 08:28:47 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,20 +18,17 @@ void	push_swap(t_bucket *bucket)
 	is_args_duplicate(bucket->stack_a);
 	display_all_stack(bucket);
 	ft_putendl_fd("\033[1mOperations:\033[0m", 1);
-
 	size = stack_items_count(bucket->stack_a);
-	if (!is_args_ordered(bucket->stack_a, size, 0))
+	while (!is_args_ordered(bucket->stack_a, size, 1)
+		&& size == stack_items_count(bucket->stack_a))
 	{
 		if (size < 3)
 			basic_sort_a(bucket);
 		else if (size < 5)
 			medium_sort(bucket);
 		else if (size >= 5)
-			radix_sort(bucket);
+			radix_sort(bucket, 0, size - 1);
 	}
-	if (is_args_ordered(bucket->stack_a, size, 1)
-		&& size == stack_items_count(bucket->stack_a))
-		;
 }
 
 int	main(int argc, char **argv)

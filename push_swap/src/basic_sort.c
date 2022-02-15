@@ -6,7 +6,7 @@
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 09:17:17 by jmartin           #+#    #+#             */
-/*   Updated: 2022/02/14 15:05:33 by jmartin          ###   ########.fr       */
+/*   Updated: 2022/02/14 16:29:23 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,17 +45,7 @@ void	basic_sort_b(t_bucket *bucket)
 void	medium_sort(t_bucket *bucket)
 {
 	int	size;
-	int	i;
 
-	i = -1;
 	size = stack_items_count(bucket->stack_a);
-	while (++i < size)
-		if (bucket->stack_a[i] <= size)
-			push_b(bucket);
-	push_a(bucket);
-	basic_sort_a(bucket);
-	size = stack_items_count(bucket->stack_b);
-	while (size-- >= 0)
-		push_a(bucket);
 	display_all_stack(bucket);
 }

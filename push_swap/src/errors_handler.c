@@ -6,7 +6,7 @@
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 19:58:14 by jmartin           #+#    #+#             */
-/*   Updated: 2022/02/09 19:59:59 by jmartin          ###   ########.fr       */
+/*   Updated: 2022/02/15 08:12:17 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,4 +90,14 @@ bool	is_args_max_int(long int arg, t_bucket *bucket)
 		exit(EXIT_FAILURE);
 	}
 	return (1);
+}
+
+bool	is_stack_empty(int *stack)
+{
+	int	size;
+
+	size = stack_items_count(stack);
+	if (size >= 0)
+		return (1);
+	return (0);
 }
