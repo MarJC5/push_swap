@@ -39,17 +39,18 @@ chmod +x range.py
 ./range.py
 ```
 
-## [push_swap_visualizer](https://github.com/o-reo/push_swap_visualizer)
-
-Launch the script with :
-
-python3 pyviz.py `ruby -e "puts (-200..200).to_a.shuffle.join(' ')"` or any other list of numbers.
-
 ## Exam test range
 
+### School tester
+
 ```shell
+curl -O https://projects.intra.42.fr/uploads/document/document/7345/checker_Mac
+mv checker_Mac checker
+chmod +x checker
 ARG=`ruby -e "puts (0..100).to_a.shuffle.join(' ')"`; ./push_swap $ARG | ./checker $ARG
 ```
+
+### [Pyviz.py tester](https://github.com/o-reo/push_swap_visualizer)
 
 ``3``: python3 pyviz.py `ruby -e "puts (-1..1).to_a.shuffle.join(' ')"`
 
