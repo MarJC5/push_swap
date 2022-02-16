@@ -6,18 +6,17 @@
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 09:17:17 by jmartin           #+#    #+#             */
-/*   Updated: 2022/02/15 11:05:30 by jmartin          ###   ########.fr       */
+/*   Updated: 2022/02/16 07:33:12 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-void	basic_sort(t_bucket *bucket, int stack_a_size)
+void	basic_sort(t_bucket *bucket)
 {
-	ft_putnbr_fd(stack_a_size, 1);
-	if (bucket->stack_a[0] > bucket->stack_a[stack_a_size / 2])
+	if (bucket->stack_a[0] > bucket->stack_a[*bucket->a_size / 2])
 		swap_a(bucket, 1);
-	if (bucket->stack_a[1] > bucket->stack_a[stack_a_size])
+	if (bucket->stack_a[1] > bucket->stack_a[*bucket->a_size])
 	{
 		reverse_rotate_a(bucket, 1);
 		if (bucket->stack_a[0] > bucket->stack_a[1])

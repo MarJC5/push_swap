@@ -6,7 +6,7 @@
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 19:58:14 by jmartin           #+#    #+#             */
-/*   Updated: 2022/02/15 11:33:40 by jmartin          ###   ########.fr       */
+/*   Updated: 2022/02/16 07:43:04 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,21 +56,21 @@ bool	is_args_duplicate(int *stack, int stack_size)
 	return (1);
 }
 
-bool	is_args_ordered(int *stack, int size, int msg)
+bool	is_args_ordered(t_bucket *bucket, int msg)
 {
 	int	i;
 
-	i = -1;
-	while (++i < size)
+	i = 0;
+	while (++i <= *bucket->a_size)
 	{
-		if (stack[i - 1] > stack[i])
+		if (bucket->stack_a[i - 1] > bucket->stack_a[i])
 			return (0);
 	}
 	if (msg)
 	{
 		ft_putendl_fd("\n--------------------------------", 1);
 		ft_putstr_fd("\033[1;32mStack A\033[0m --> ", 1);
-		display_stack(stack, &size);
+		display_stack(bucket->stack_a, *bucket->a_size);
 		ft_putendl_fd("\n--------------------------------", 1);
 	}
 	return (1);

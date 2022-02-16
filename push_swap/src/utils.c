@@ -6,7 +6,7 @@
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 11:06:57 by jmartin           #+#    #+#             */
-/*   Updated: 2022/02/15 11:57:55 by jmartin          ###   ########.fr       */
+/*   Updated: 2022/02/16 07:25:12 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,20 +53,17 @@ void	shift_down(int *stack, int size)
 int	stack_items_count(int count, char **args)
 {
 	int		i;
-	int		result;
 	char 	**split;
 
 	i = -1;
-	result = count - 1;
 	if (count == 2)
 	{
 		split = ft_split(args[count - 1], ' ');
 		while (split[++i])
 			;
-		result = i;
-		return (result);
+		return (i);
 	}
-	else if (count >= 3)
-		return (result);
+	else if (count > 2)
+		return (count - 1);
 	return (0);
 }

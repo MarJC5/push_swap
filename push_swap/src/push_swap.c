@@ -6,7 +6,7 @@
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 16:18:26 by jmartin           #+#    #+#             */
-/*   Updated: 2022/02/15 11:58:16 by jmartin          ###   ########.fr       */
+/*   Updated: 2022/02/16 07:27:12 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,11 @@ void	push_swap(t_bucket *bucket)
 {
 	is_args_duplicate(bucket->stack_a, *bucket->a_size);
 	ft_putendl_fd("\033[1mOperations:\033[0m", 1);
-	/*if (!is_args_ordered(bucket->stack_a, bucket->a_size, 1))
+	while (!is_args_ordered(bucket, 1))
 	{
-		if (*bucket->a_size < 3)
-			basic_sort(bucket, *bucket->a_size);
-		else if (a_size < 5)
-			medium_sort(bucket, *stack_a_size);
-		else if (a_size >= 5)
-			radix_sort(bucket, 0, a_size, stack_b_size);
-	}*/
+		if (*bucket->a_size <= 3)
+			basic_sort(bucket);
+	}
 }
 
 int	main(int argc, char **argv)
@@ -37,18 +33,18 @@ int	main(int argc, char **argv)
 		return (0);
 	}
 	bucket = malloc(sizeof(t_bucket));
-	bucket->a = 3;
+	bucket->a = stack_items_count(argc, argv);
 	bucket->b = 0;
 	bucket->a_size = &bucket->a;
-	bucket->b_size = 0;
-	ft_putnbr_fd(*bucket->a_size, 1);
-	/*if (!bucket)
+	bucket->b_size = &bucket->b;
+	if (!bucket)
 		return (0);
 	if (argc == 2)
 		single_arg_to_int(bucket, argv[argc - 1]);
 	else if (argc >= 3)
-		multiple_args_to_int(bucket, *bucket->a_size, argv);*/
-	//push_swap(bucket);
+		multiple_args_to_int(bucket, argc, argv);
+	display_sorting(bucket);
+	push_swap(bucket);
 	free_bucket(bucket);
 	return (0);
 }

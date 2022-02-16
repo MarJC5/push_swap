@@ -6,7 +6,7 @@
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 10:56:49 by jmartin           #+#    #+#             */
-/*   Updated: 2022/02/15 11:00:05 by jmartin          ###   ########.fr       */
+/*   Updated: 2022/02/15 19:35:50 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ void	multiple_args_to_int(t_bucket *bucket, int count, char **items)
 	int	i;
 	int	j;
 
-	i = count;
+	i = count - 1;
 	bucket->numbers = (int *)malloc(i * sizeof(int));
 	bucket->stack_b = (int *)malloc(i * sizeof(int));
 	j = -1;
