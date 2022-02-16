@@ -6,7 +6,7 @@
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 09:13:50 by jmartin           #+#    #+#             */
-/*   Updated: 2022/02/15 11:08:41 by jmartin          ###   ########.fr       */
+/*   Updated: 2022/02/16 09:29:08 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	radix_sort(t_bucket *bucket, int max_bits, int max_size, int *items_count)
 			else
 				push_b(bucket);
 		}
-		while (is_stack_empty(items_count))
+		while (is_stack_empty(*items_count))
 			push_a(bucket);
 	}
 }

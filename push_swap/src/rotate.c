@@ -6,7 +6,7 @@
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 07:11:58 by jmartin           #+#    #+#             */
-/*   Updated: 2022/02/15 11:25:25 by jmartin          ###   ########.fr       */
+/*   Updated: 2022/02/16 09:36:32 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	rotate_a(t_bucket *bucket, int msg)
 	if (*bucket->a_size > 1)
 	{
 		shift_up(bucket->stack_a, *bucket->a_size);
-		bucket->stack_a[*bucket->a_size] = tmp;
+		bucket->stack_a[*bucket->a_size - 1] = tmp;
 		if (msg)
 			ft_putendl_fd("ra", 1);
 	}
@@ -34,7 +34,7 @@ void	rotate_b(t_bucket *bucket, int msg)
 	if (*bucket->b_size > 1)
 	{
 		shift_up(bucket->stack_b, *bucket->b_size);
-		bucket->stack_b[*bucket->b_size] = tmp;
+		bucket->stack_b[*bucket->b_size - 1] = tmp;
 		if (msg)
 			ft_putendl_fd("rb", 1);
 	}

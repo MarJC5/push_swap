@@ -6,7 +6,7 @@
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 07:11:31 by jmartin           #+#    #+#             */
-/*   Updated: 2022/02/15 11:23:28 by jmartin          ###   ########.fr       */
+/*   Updated: 2022/02/16 09:36:15 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	reverse_rotate_a(t_bucket *bucket, int msg)
 {
 	int	tmp;
 
-	tmp = bucket->stack_a[*bucket->a_size];
+	tmp = bucket->stack_a[*bucket->a_size - 1];
 	if (*bucket->a_size > 1)
 	{
 		shift_down(bucket->stack_a, *bucket->a_size);
@@ -30,7 +30,7 @@ void	reverse_rotate_b(t_bucket *bucket, int msg)
 {
 	int	tmp;
 
-	tmp = bucket->stack_b[*bucket->b_size];
+	tmp = bucket->stack_b[*bucket->b_size - 1];
 	if (*bucket->b_size > 1)
 	{
 		shift_down(bucket->stack_b, *bucket->b_size);

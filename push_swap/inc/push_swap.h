@@ -6,7 +6,7 @@
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 16:18:21 by jmartin           #+#    #+#             */
-/*   Updated: 2022/02/15 19:28:37 by jmartin          ###   ########.fr       */
+/*   Updated: 2022/02/16 10:32:59 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ typedef struct s_bucket
 	int	*b_size;
 }	t_bucket;
 
-void	display_stack(int *stack, int stack_size);
+void	display_stack_a(t_bucket *bucket);
+void	display_stack_b(t_bucket *bucket);
 void	display_all_stack(t_bucket *bucket);
 void	display_sorting(t_bucket *bucket);
 
@@ -60,17 +61,14 @@ void	reverse_rotate_ab(t_bucket *bucket);
 void	push_a(t_bucket *bucket);
 void	push_b(t_bucket *bucket);
 
-void	single_arg_to_int(t_bucket *bucket, char *items);
-void	multiple_args_to_int(t_bucket *bucket, int count, char **items);
+int		single_arg_to_int(t_bucket *bucket, char *items);
+int		multiple_args_to_int(t_bucket *bucket, int count, char **items);
 
 void	basic_sort(t_bucket *bucket);
-//void	medium_sort(t_bucket *bucket, int *stack_a_size);
 //void	radix_sort(t_bucket *bucket, int max_bits, int max_size, int *item_count);
 
-int		stack_items_count(int count, char **args);
-
 bool	is_args_number(char *arg);
-bool	is_stack_empty(int *stack_count);
+bool	is_stack_empty(int stack_count);
 bool	is_args_duplicate(int *stack, int stack_size);
 bool	is_args_ordered(t_bucket *bucket, int msg);
 bool	is_args_max_int(long int arg, t_bucket *bucket);

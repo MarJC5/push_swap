@@ -6,7 +6,7 @@
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 19:58:14 by jmartin           #+#    #+#             */
-/*   Updated: 2022/02/16 07:43:04 by jmartin          ###   ########.fr       */
+/*   Updated: 2022/02/16 10:24:03 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,16 +61,17 @@ bool	is_args_ordered(t_bucket *bucket, int msg)
 	int	i;
 
 	i = 0;
-	while (++i <= *bucket->a_size)
+	while (i < (*bucket->a_size - 1))
 	{
-		if (bucket->stack_a[i - 1] > bucket->stack_a[i])
+		if (bucket->stack_a[i] > bucket->stack_a[i + 1])
 			return (0);
+		i++;
 	}
 	if (msg)
 	{
 		ft_putendl_fd("\n--------------------------------", 1);
 		ft_putstr_fd("\033[1;32mStack A\033[0m --> ", 1);
-		display_stack(bucket->stack_a, *bucket->a_size);
+		display_stack_a(bucket);
 		ft_putendl_fd("\n--------------------------------", 1);
 	}
 	return (1);
@@ -90,9 +91,9 @@ bool	is_args_max_int(long int arg, t_bucket *bucket)
 	return (1);
 }
 
-bool	is_stack_empty(int *stack_count)
+bool	is_stack_empty(int stack_count)
 {
-	if (stack_count >= 0)
+	if (stack_count > 0)
 		return (1);
 	return (0);
 }

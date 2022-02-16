@@ -6,7 +6,7 @@
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 07:12:07 by jmartin           #+#    #+#             */
-/*   Updated: 2022/02/15 11:25:56 by jmartin          ###   ########.fr       */
+/*   Updated: 2022/02/16 09:59:19 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	swap_items(int *item_1, int *item_2)
 
 void	swap_a(t_bucket *bucket, int msg)
 {
-	if (*bucket->a_size >= 1)
+	if (*bucket->a_size > 1)
 	{
 		swap_items(&bucket->stack_a[0], &bucket->stack_a[1]);
 		if (msg)
@@ -33,7 +33,7 @@ void	swap_a(t_bucket *bucket, int msg)
 
 void	swap_b(t_bucket *bucket, int msg)
 {
-	if (*bucket->b_size >= 1)
+	if (*bucket->b_size > 1)
 	{
 		swap_items(&bucket->stack_b[0], &bucket->stack_b[1]);
 		if (msg)

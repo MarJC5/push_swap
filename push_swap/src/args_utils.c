@@ -6,7 +6,7 @@
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 10:56:49 by jmartin           #+#    #+#             */
-/*   Updated: 2022/02/15 19:35:50 by jmartin          ###   ########.fr       */
+/*   Updated: 2022/02/16 09:20:11 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static int	*format_ints(int *nbrs, int len)
 	return (a);
 }
 
-void	single_arg_to_int(t_bucket *bucket, char *items)
+int	single_arg_to_int(t_bucket *bucket, char *items)
 {
 	char	**split;
 	int		i;
@@ -61,9 +61,10 @@ void	single_arg_to_int(t_bucket *bucket, char *items)
 		bucket->numbers[j] = nbr;
 	}
 	bucket->stack_a = format_ints(bucket->numbers, i);
+	return (i);
 }
 
-void	multiple_args_to_int(t_bucket *bucket, int count, char **items)
+int	multiple_args_to_int(t_bucket *bucket, int count, char **items)
 {
 	int	nbr;
 	int	i;
@@ -80,5 +81,8 @@ void	multiple_args_to_int(t_bucket *bucket, int count, char **items)
 		nbr = ft_atoi(items[j + 1]);
 		bucket->numbers[j] = nbr;
 	}
+	bucket->a = i;
+	bucket->b_size = 0;
 	bucket->stack_a = format_ints(bucket->numbers, i);
+	return (i);
 }
