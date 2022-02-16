@@ -6,7 +6,7 @@
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 10:56:49 by jmartin           #+#    #+#             */
-/*   Updated: 2022/02/16 09:20:11 by jmartin          ###   ########.fr       */
+/*   Updated: 2022/02/16 13:29:05 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,8 +81,6 @@ int	multiple_args_to_int(t_bucket *bucket, int count, char **items)
 		nbr = ft_atoi(items[j + 1]);
 		bucket->numbers[j] = nbr;
 	}
-	bucket->a = i;
-	bucket->b_size = 0;
 	bucket->stack_a = format_ints(bucket->numbers, i);
 	return (i);
 }
