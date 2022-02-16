@@ -6,34 +6,33 @@
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 09:13:50 by jmartin           #+#    #+#             */
-/*   Updated: 2022/02/16 09:29:08 by jmartin          ###   ########.fr       */
+/*   Updated: 2022/02/16 12:33:24 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-void	radix_sort(t_bucket *bucket, int max_bits, int max_size, int *items_count)
+void	radix_sort(t_bucket *bucket, int max_bits, int max_size)
 {
 	int	i;
 	int	j;
 	int	num;
 
-	i = 0;
-	j = 0;
-	while ((max_size >> max_bits) != 0)
-		max_bits++;
-	while (i++ < max_bits)
+	i = -1;
+	while (((max_size - 1) >> max_bits) != 0)
+		++max_bits;
+	while (++i < max_bits)
 	{
-		while (j++ < max_size)
+		j = -1;
+		while (++j < max_size)
 		{
 			num = bucket->stack_a[0];
-			ft_putendl_fd("", 1);
-			if (((num >> i) & 1 )== 1)
+			if (((num >> i) & 1) == 1)
 				rotate_a(bucket, 1);
 			else
 				push_b(bucket);
 		}
-		while (is_stack_empty(*items_count))
+		while (*bucket->b_size)
 			push_a(bucket);
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 11:06:57 by jmartin           #+#    #+#             */
-/*   Updated: 2022/02/16 09:33:40 by jmartin          ###   ########.fr       */
+/*   Updated: 2022/02/16 11:53:35 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,24 +28,18 @@ void	shift_up(int *stack, int size)
 	int	i;
 
 	i = 0;
-	if (size > 1)
+	while (i < size)
 	{
-		while (i < size)
-		{
-			stack[i] = stack[i + 1];
-			i++;
-		}
+		stack[i] = stack[i + 1];
+		i++;
 	}
 }
 
 void	shift_down(int *stack, int size)
 {
-	if (size > 1)
+	while (size > 0)
 	{
-		while (size > 0)
-		{
-			stack[size] = stack[size - 1];
-			size--;
-		}
+		stack[size] = stack[size - 1];
+		size--;
 	}
 }
