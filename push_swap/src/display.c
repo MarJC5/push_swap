@@ -6,7 +6,7 @@
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 12:39:10 by jmartin           #+#    #+#             */
-/*   Updated: 2022/02/16 10:21:41 by jmartin          ###   ########.fr       */
+/*   Updated: 2022/02/16 13:25:46 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,14 @@ void	display_all_stack(t_bucket *bucket)
 	ft_putendl_fd("\n--------------------------------", 1);
 }
 
-void	display_sorting(t_bucket *bucket)
+void	display_sorting(t_bucket *bucket, char *color, int display)
 {
-	ft_putendl_fd("\n--------------------------------", 1);
-	ft_putstr_fd("\033[1;31mStack A\033[0m --> ", 1);
-	display_stack_a(bucket);
-	ft_putendl_fd("\n--------------------------------", 1);
+	if (display > 0)
+	{
+		ft_putendl_fd("\n--------------------------------", 1);
+		ft_putstr_fd(color, 1);
+		ft_putstr_fd("Stack A\033[0m --> ", 1);
+		display_stack_a(bucket);
+		ft_putendl_fd("\n--------------------------------", 1);
+	}
 }

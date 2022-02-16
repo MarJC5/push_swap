@@ -6,7 +6,7 @@
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 16:18:21 by jmartin           #+#    #+#             */
-/*   Updated: 2022/02/16 11:37:55 by jmartin          ###   ########.fr       */
+/*   Updated: 2022/02/16 13:25:16 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 # define WRONG_ARGS_ERROR	"Wrong number of arguments, please enter a string of numbers or\
 	numbers sparated by space."
+# define RED "\033[1;31m"
+# define GREEN "\033[1;32m"
+# define DISPLAY_STATUS 1
 
 # include <unistd.h>
 # include <stdlib.h>
@@ -36,7 +39,7 @@ typedef struct s_bucket
 void	display_stack_a(t_bucket *bucket);
 void	display_stack_b(t_bucket *bucket);
 void	display_all_stack(t_bucket *bucket);
-void	display_sorting(t_bucket *bucket);
+void	display_sorting(t_bucket *bucket, char *color, int display);
 
 void	free_bucket(t_bucket *bucket);
 
@@ -69,7 +72,7 @@ void	radix_sort(t_bucket *bucket, int max_bits, int max_size);
 
 bool	is_args_number(char *arg);
 bool	is_args_duplicate(int *stack, int stack_size);
-bool	is_args_ordered(t_bucket *bucket, int msg);
+bool	is_args_ordered(t_bucket *bucket);
 bool	is_args_max_int(long int arg, t_bucket *bucket);
 
 #endif
