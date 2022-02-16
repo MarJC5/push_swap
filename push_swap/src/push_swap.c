@@ -6,7 +6,7 @@
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 16:18:26 by jmartin           #+#    #+#             */
-/*   Updated: 2022/02/16 14:29:23 by jmartin          ###   ########.fr       */
+/*   Updated: 2022/02/16 23:23:02 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,20 @@ void	push_swap(t_bucket *bucket)
 {
 	is_args_duplicate(bucket->stack_a, *bucket->a_size);
 	if (is_args_ordered(bucket))
-		display_sorting(bucket, GREEN, DISPLAY_STATUS);
+		display_sorting(bucket, GREEN, DISPLAY_STATUS, 0);
 	else
 	{
-		display_sorting(bucket, RED, DISPLAY_STATUS);
+		display_sorting(bucket, RED, DISPLAY_STATUS, 0);
 		if (*bucket->a_size <= 3)
 			basic_sort(bucket);
-		else if (*bucket->a_size >= 5)
+		else if (*bucket->a_size <= 5)
+			medium_sort(bucket);
+		else if (*bucket->a_size > 5)
 			radix_sort(bucket, 0, *bucket->a_size);
-		if (is_args_ordered(bucket))
-			display_sorting(bucket, GREEN, DISPLAY_STATUS);
+		if (is_args_ordered(bucket) && *bucket->b_size == 0)
+			display_sorting(bucket, GREEN, DISPLAY_STATUS, 2);
 		else
-			display_sorting(bucket, RED, DISPLAY_STATUS);
+			display_sorting(bucket, RED, DISPLAY_STATUS, 1);
 	}
 }
 

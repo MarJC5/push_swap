@@ -10,6 +10,8 @@
 .vscode
 push_swap/push_swap
 push_swap/pyviz.py
+push_swap_tester
+checker
 
 *.obj
 *.elf

@@ -29,7 +29,7 @@ the last one.
 - `rrb` : reverse rotate b - shift down all elements of stack b by 1. The last element becomes the first one.
 - `rrr` : `rra` and `rrb` at the same time.
 
-## Random list generation
+## Random list generator
 
 This python script gives you random numbers separated by a space that you can test with the algo.
 the second argument of random.sample controls the number of numbers in the list.
@@ -44,3 +44,17 @@ chmod +x range.py
 Launch the script with :
 
 python3 pyviz.py `ruby -e "puts (-200..200).to_a.shuffle.join(' ')"` or any other list of numbers.
+
+## Exam test range
+
+```shell
+ARG=`ruby -e "puts (0..100).to_a.shuffle.join(' ')"`; ./push_swap $ARG | ./checker $ARG
+```
+
+``3``: python3 pyviz.py `ruby -e "puts (-1..1).to_a.shuffle.join(' ')"`
+
+``5``: python3 pyviz.py `ruby -e "puts (-2..2).to_a.shuffle.join(' ')"`
+
+``100``: python3 pyviz.py `ruby -e "puts (-50..50).to_a.shuffle.join(' ')"`
+
+``500``: python3 pyviz.py `ruby -e "puts (-250..250).to_a.shuffle.join(' ')"`

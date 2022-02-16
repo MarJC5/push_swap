@@ -6,7 +6,7 @@
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 09:17:17 by jmartin           #+#    #+#             */
-/*   Updated: 2022/02/16 14:12:21 by jmartin          ###   ########.fr       */
+/*   Updated: 2022/02/16 22:52:50 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,9 @@ void	basic_sort(t_bucket *bucket)
 		if (bucket->stack_a[0] > bucket->stack_a[1])
 			swap_a(bucket, 1);
 	}
+}
+
+void	medium_sort(t_bucket *bucket)
+{
+	(void) bucket;
 }
