@@ -6,7 +6,7 @@
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 16:18:21 by jmartin           #+#    #+#             */
-/*   Updated: 2022/02/16 13:25:16 by jmartin          ###   ########.fr       */
+/*   Updated: 2022/02/16 14:43:26 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 	numbers sparated by space."
 # define RED "\033[1;31m"
 # define GREEN "\033[1;32m"
-# define DISPLAY_STATUS 1
+# define DISPLAY_STATUS 0
 
 # include <unistd.h>
 # include <stdlib.h>
@@ -30,7 +30,7 @@ typedef struct s_bucket
 	int	*numbers;
 	int	*stack_a;
 	int	*stack_b;
-	int a;
+	int	a;
 	int	b;
 	int	*a_size;
 	int	*b_size;

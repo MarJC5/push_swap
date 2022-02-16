@@ -29,6 +29,16 @@ the last one.
 - `rrb` : reverse rotate b - shift down all elements of stack b by 1. The last element becomes the first one.
 - `rrr` : `rra` and `rrb` at the same time.
 
+## Random list generation
+
+This python script gives you random numbers separated by a space that you can test with the algo.
+the second argument of random.sample controls the number of numbers in the list.
+
+```shell
+chmod +x range.py
+./range.py
+```
+
 ## [push_swap_visualizer](https://github.com/o-reo/push_swap_visualizer)
 
 Launch the script with :
