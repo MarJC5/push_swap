@@ -6,7 +6,7 @@
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 19:58:14 by jmartin           #+#    #+#             */
-/*   Updated: 2022/02/23 10:25:38 by jmartin          ###   ########.fr       */
+/*   Updated: 2022/02/23 10:33:02 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ bool	is_args_max_int(long int arg, t_bucket *bucket)
 	int	i;
 
 	i = 0;
-	if (arg > INT_MAX)
+	if (arg > INT_MAX || arg < INT_MIN)
 	{
 		free_bucket(bucket);
 		ft_putendl_fd(WRONG_ARGS_ERROR, 1);
