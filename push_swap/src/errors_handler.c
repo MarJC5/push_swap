@@ -6,7 +6,7 @@
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 19:58:14 by jmartin           #+#    #+#             */
-/*   Updated: 2022/02/23 10:03:10 by jmartin          ###   ########.fr       */
+/*   Updated: 2022/02/23 10:25:38 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ bool	is_args_number(char *arg)
 	i = -1;
 	while (arg[++i])
 	{
-		if ((arg[i] == 43 || (arg[i] == 45 && ft_isdigit(arg[i + 1])) || arg[i] == 32
-				|| (arg[i] >= 9 && arg[i] <= 13)) || ft_isdigit(arg[i]))
+		if (((arg[i] == 45 && ft_isdigit(arg[i + 1])) || arg[i] == 32
+				|| ft_isdigit(arg[i])))
 			continue ;
 		else
 		{

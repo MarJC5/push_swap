@@ -6,7 +6,7 @@
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 16:18:26 by jmartin           #+#    #+#             */
-/*   Updated: 2022/02/23 09:26:34 by jmartin          ###   ########.fr       */
+/*   Updated: 2022/02/23 10:08:50 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,7 @@ int	main(int argc, char **argv)
 
 	counter = 0;
 	if (argc <= 1)
-	{
-		ft_putstr_fd(WRONG_ARGS_ERROR, 1);
 		return (0);
-	}
 	bucket = malloc(sizeof(t_bucket));
 	bucket->b = 0;
 	if (!bucket)
