@@ -6,15 +6,14 @@
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 16:18:21 by jmartin           #+#    #+#             */
-/*   Updated: 2022/02/23 09:53:42 by jmartin          ###   ########.fr       */
+/*   Updated: 2022/02/23 09:59:18 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# define WRONG_ARGS_ERROR	"Wrong number of arguments, please enter a string of numbers or\
-	numbers sparated by space."
+# define WRONG_ARGS_ERROR	"Error\n"
 # define RED "\033[1;31m"
 # define GREEN "\033[1;32m"
 # define DISPLAY_STATUS 0

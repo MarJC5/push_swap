@@ -6,7 +6,7 @@
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 19:58:14 by jmartin           #+#    #+#             */
-/*   Updated: 2022/02/16 18:00:54 by jmartin          ###   ########.fr       */
+/*   Updated: 2022/02/23 10:03:10 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ bool	is_args_number(char *arg)
 	i = -1;
 	while (arg[++i])
 	{
-		if ((arg[i] == 43 || arg[i] == 45 || arg[i] == 32
+		if ((arg[i] == 43 || (arg[i] == 45 && ft_isdigit(arg[i + 1])) || arg[i] == 32
 				|| (arg[i] >= 9 && arg[i] <= 13)) || ft_isdigit(arg[i]))
 			continue ;
 		else
 		{
-			ft_putendl_fd("Error", 1);
+			ft_putendl_fd(WRONG_ARGS_ERROR, 1);
 			exit(EXIT_FAILURE);
 			return (0);
 		}
@@ -45,7 +45,7 @@ bool	is_args_duplicate(int *stack, int stack_size)
 		{
 			if (stack[i] == stack[j])
 			{
-				ft_putendl_fd("Error", 1);
+				ft_putendl_fd(WRONG_ARGS_ERROR, 1);
 				exit(EXIT_FAILURE);
 				return (0);
 			}
@@ -78,7 +78,7 @@ bool	is_args_max_int(long int arg, t_bucket *bucket)
 	if (arg > INT_MAX)
 	{
 		free_bucket(bucket);
-		ft_putendl_fd("Error", 1);
+		ft_putendl_fd(WRONG_ARGS_ERROR, 1);
 		exit(EXIT_FAILURE);
 	}
 	return (1);
