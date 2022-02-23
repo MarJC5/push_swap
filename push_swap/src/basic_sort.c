@@ -6,7 +6,7 @@
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 09:17:17 by jmartin           #+#    #+#             */
-/*   Updated: 2022/02/23 09:32:09 by jmartin          ###   ########.fr       */
+/*   Updated: 2022/02/23 09:48:23 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,7 @@ void	basic_sort(t_bucket *bucket)
 
 void	medium_sort(t_bucket *bucket)
 {
-	if (bucket->stack_a[0] == 1 || bucket->stack_a[1] == 2)
-		push_b(bucket);
-	else if (bucket->stack_a[0] == 2 || bucket->stack_a[1] == 1)
+	if (bucket->stack_a[0] <= 2)
 		push_b(bucket);
 	else
 		rotate_a(bucket, 1);
