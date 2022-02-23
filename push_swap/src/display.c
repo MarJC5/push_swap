@@ -6,7 +6,7 @@
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 12:39:10 by jmartin           #+#    #+#             */
-/*   Updated: 2022/02/16 23:00:01 by jmartin          ###   ########.fr       */
+/*   Updated: 2022/02/23 07:37:29 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,20 +40,33 @@ void	display_stack_b(t_bucket *bucket)
 		ft_putstr_fd("Empty", 1);
 }
 
+void	display_instruction_counter(t_bucket *bucket)
+{
+	ft_putstr_fd("\033[1mTotal instructions --> \033[0m", 1);
+	ft_putnbr_fd(*bucket->counter, 1);
+	ft_putendl_fd("\n", 1);
+}
+
 void	display_sorting(t_bucket *bucket, char *color, int display, int msg)
 {
 	if (display > 0)
 	{
 		ft_putendl_fd("--------------------------------", 1);
+		if (msg == 1)
+		{
+			ft_putendl_fd("\033[1;31mSheh, ça marche pas frère.\033[0m", 1);
+			display_instruction_counter(bucket);
+		}
+		else if (msg == 2)
+		{
+			ft_putendl_fd("\033[1;32mBien joué bg, c'est carré.\033[0m", 1);
+			display_instruction_counter(bucket);
+		}
 		ft_putstr_fd(color, 1);
 		ft_putstr_fd("Stack A\033[0m --> ", 1);
 		display_stack_a(bucket);
 		ft_putstr_fd("\n\033[1mStack B\033[0m --> ", 1);
 		display_stack_b(bucket);
-		if (msg == 1)
-			ft_putstr_fd("\n\n\033[1;31mSheh, ça marche pas frère.\033[0m", 1);
-		else if (msg == 2)
-			ft_putstr_fd("\n\n\033[1;32mBien joué bg, c'est carré.\033[0m", 1);
 		ft_putendl_fd("\n--------------------------------", 1);
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: jmartin <jmartin@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 07:12:07 by jmartin           #+#    #+#             */
-/*   Updated: 2022/02/16 09:59:19 by jmartin          ###   ########.fr       */
+/*   Updated: 2022/02/23 07:17:16 by jmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void	swap_a(t_bucket *bucket, int msg)
 	if (*bucket->a_size > 1)
 	{
 		swap_items(&bucket->stack_a[0], &bucket->stack_a[1]);
+		*bucket->counter += 1;
 		if (msg)
 			ft_putendl_fd("sa", 1);
 	}
@@ -36,6 +37,7 @@ void	swap_b(t_bucket *bucket, int msg)
 	if (*bucket->b_size > 1)
 	{
 		swap_items(&bucket->stack_b[0], &bucket->stack_b[1]);
+		*bucket->counter += 1;
 		if (msg)
 			ft_putendl_fd("sb", 1);
 	}
@@ -45,5 +47,6 @@ void	swap_ab(t_bucket *bucket)
 {
 	swap_a(bucket, 0);
 	swap_b(bucket, 0);
+	*bucket->counter -= 1;
 	ft_putendl_fd("ss", 1);
 }
