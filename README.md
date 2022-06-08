@@ -48,9 +48,6 @@ curl -O https://projects.intra.42.fr/uploads/document/document/7345/checker_Mac
 mv checker_Mac checker
 chmod +x checker
 ARG=`ruby -e "puts (0..100).to_a.shuffle.join(' ')"`; ./push_swap $ARG | ./checker $ARG
-mv checker_Mac checker
-chmod +x checker
-ARG=`ruby -e "puts (0..100).to_a.shuffle.join(' ')"`; ./push_swap $ARG | ./checker $ARG
 ```
 
 ### [Pyviz.py tester](https://github.com/o-reo/push_swap_visualizer)
